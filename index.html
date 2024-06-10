@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header id="header">My book library
+        <button id="openModal">Add new book</button>
+    </header>
+    <section id="book-section">
+        
+    </section>
+
+    <div class="modal" id="modal">
+        <div class="modal-inner">
+            <button id="closeModal">X</button>
+            <p>Add book to lib</p>
+            <input
+            class="input"
+            type="text"
+            id="title"
+            placeholder="Title"
+            required
+            maxlength="100">
+            <input
+            class="input"
+            type="text"
+            id="author"
+            placeholder="Author"
+            required
+            maxlength="100">
+            <input
+            class="input"
+            type="number"
+            id="pages"
+            placeholder="Pages"
+            required
+            maxlength="100">
+            <label for="checkbox">Have you read it?</label>
+            <input
+            type="checkbox"
+            id="checkbox">
+            
+            
+            <button id="submitButton">Submit</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
