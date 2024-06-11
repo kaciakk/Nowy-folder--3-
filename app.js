@@ -15,27 +15,50 @@ closeModal.addEventListener('click', function(){
 const bookSection = document.querySelector('#book-section');
 
 function displayBooks(){
-myLibrary.forEach(book => {
+    bookSection.textContent = '';
+myLibrary.forEach((book, index) => {
     const bookContainer = document.createElement('div');
     bookContainer.className = 'book-container';
+
     const bookTitle = document.createElement('p');
     bookTitle.textContent = `Tittle: ${book.title}`;
     bookContainer.appendChild(bookTitle);
+
     const bookAuthor = document.createElement('p');
     bookAuthor.textContent = `Author: ${book.author}`
     bookContainer.appendChild(bookAuthor);
+
     const bookPages = document.createElement('p');
     bookPages.textContent = `Pages: ${book.pages}`;
     bookContainer.appendChild(bookPages);
+
     const bookRead = document.createElement('p');
     bookRead.textContent = `${book.read}`
     bookContainer.appendChild(bookRead);
+
+    const removeButton = document.createElement('button');
+    removeButton.id = 'removeBtn';
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', function () {
+        removeBook(index)
+    });
+    bookContainer.appendChild(removeButton);
+    const readButton = document.createElement('button');
+    readButton.id = 'readBtn2';
+    readButton.textContent = 'Read';
+    readButton.addEventListener('click', function () {
+        bookRead.textContent = `not read`
+    })
+    bookContainer.appendChild(readButton);
 
     bookSection.appendChild(bookContainer)
 });
 }
 
-
+function removeBook(index){
+    myLibrary.splice(index, 1)
+    displayBooks()
+}
 
 function Book(title, author, pages, read){
     this.title = title;

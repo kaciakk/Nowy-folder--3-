@@ -62,3 +62,13 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+#removeBtn{
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+#removeBtn:hover{
+    background-color: #d49494;
+}
