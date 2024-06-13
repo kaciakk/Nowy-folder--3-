@@ -49,7 +49,7 @@ myLibrary.forEach((book, index) => {
     readButton.addEventListener('click', function () {
         bookRead.textContent = `not read`
     })
-    bookContainer.appendChild(readButton);
+   
 
     bookSection.appendChild(bookContainer)
 });
